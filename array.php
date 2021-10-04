@@ -21,6 +21,7 @@
     }
     sort($numeros);
     miVarDump($numeros);
+    echo("Holaaaa");
     ?>
 </body>
 </html>
