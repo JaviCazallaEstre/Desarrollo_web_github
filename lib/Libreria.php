@@ -30,6 +30,14 @@ function miVarDump(array $lista)
         echo ($i . "<font color=\"#888a85\">=></font> " . gettype($lista[$i]) . " <font color=\"#4e9a06\">$lista[$i]</font></br>");
     }
 }
-function mi_array_count_value(array $lista){
-    
+function validaFomularioNumerico($num1, $num2)
+{
+    if (is_numeric($num1) && is_numeric($num2)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function pinta($pintar){
+    echo $pintar;
 }
