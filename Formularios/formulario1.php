@@ -17,7 +17,10 @@
     <label for="numero2">Segundo n&uacute;mero</label>
     <input type="text" name="numero2" id="numero2" />
     <br />
-    <button type="submit" name="enviar" id="enviar">Enviar</button>
+    <button type="submit" name="sumar" id="sumar">Sumar</button>
+    <button type="submit" name="restar" id="restar">Restar</button>
+    <button type="submit" name="multiplicar" id="multiplicar">Multiplicar</button>
+    <button type="submit" name="dividir" id="dividir">Dividir</button>
   </form>
   <p>
     <?php
