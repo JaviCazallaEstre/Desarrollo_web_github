@@ -32,12 +32,19 @@ function miVarDump(array $lista)
 }
 function validaFomularioNumerico($num1, $num2)
 {
-    if (is_numeric($num1) && is_numeric($num2)) {
-        return true;
-    } else {
-        return false;
+    if (empty($num1)) {
+        $errores["numero1"] = "El primer numero no existe";
+    } else if (!is_numeric($num1)) {
+        $errores["numero1"] = "El primer número no es numerico";
     }
+    if (empty($num2)) {
+        $errores["numero2"] = "El segundo numero no existe";
+    } else if (!is_numeric($num2)) {
+        $errores["numero2"] = "El segundo numero no es numerico";
+    }
+    return $errores;
 }
-function pinta($pintar){
+function pinta($pintar)
+{
     echo $pintar;
 }
