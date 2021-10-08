@@ -16,58 +16,52 @@
     ?>
     <form action="" method="post">
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" 
-        value="<?php echo isset($errores['nombre'])? '':$_POST['nombre'];?>"/>
+        <input type="text" name="nombre" value="<?php echo isset($errores['nombre']) ? '' : $_POST['nombre']; ?>" />
         <p><span style="color:red">
-        <?php
-            echo isset($errores['nombre'])? $errores['nombre']:'';
-        ?>
-        </span></p>
+                <?php
+                echo isset($errores['nombre']) ? $errores['nombre'] : '';
+                ?>
+            </span></p>
         <br />
         <label for="apellidos">Apellidos</label>
-        <input type="text" name="apellidos" 
-        value="<?php echo isset($errores['apellidos'])? '':$_POST['apellidos'];?>"/>
+        <input type="text" name="apellidos" value="<?php echo isset($errores['apellidos']) ? '' : $_POST['apellidos']; ?>" />
         <p><span style="color:red">
-        <?php
-            echo isset($errores['apellidos'])? $errores['apellidos']:'';
-        ?>
-        </span></p>
+                <?php
+                echo isset($errores['apellidos']) ? $errores['apellidos'] : '';
+                ?>
+            </span></p>
         <br />
         <label for="DNI">DNI</label>
-        <input type="text" name="DNI" 
-        value="<?php echo isset($errores['DNI'])? '':$_POST['DNI'];?>"/>
+        <input type="text" name="DNI" value="<?php echo isset($errores['DNI']) ? '' : $_POST['DNI']; ?>" />
         <p><span style="color:red">
-        <?php
-            echo isset($errores['DNI'])? $errores['DNI']:'';
-        ?>
-        </span></p>
+                <?php
+                echo isset($errores['DNI']) ? $errores['DNI'] : '';
+                ?>
+            </span></p>
         <br />
         <label for="fechaNac">Fecha nacimiento</label>
-        <input type="text" name="fechaNac" 
-        value="<?php echo isset($errores['fechaNac'])? '':$_POST['fechaNac'];?>"/>
+        <input type="text" name="fechaNac" value="<?php echo isset($errores['fechaNac']) ? '' : $_POST['fechaNac']; ?>" />
         <p><span style="color:red">
-        <?php
-            echo isset($errores['fechaNac'])? $errores['fechaNac']:'';
-        ?>
-        </span></p>
+                <?php
+                echo isset($errores['fechaNac']) ? $errores['fechaNac'] : '';
+                ?>
+            </span></p>
         <br />
         <label for="correo">Correo electr&oacute;nico</label>
-        <input type="text" name="correo" 
-        value="<?php echo isset($errores['correo'])? '':$_POST['correo'];?>"/>
+        <input type="text" name="correo" value="<?php echo isset($errores['correo']) ? '' : $_POST['correo']; ?>" />
         <p><span style="color:red">
-        <?php
-            echo isset($errores['correo'])? $errores['correo']:'';
-        ?>
-        </span></p>
+                <?php
+                echo isset($errores['correo']) ? $errores['correo'] : '';
+                ?>
+            </span></p>
         <br />
         <label for="web">P&aacute;gina web</label>
-        <input type="text" name="web" 
-        value="<?php echo isset($errores['web'])? '':$_POST['web'];?>"/>
+        <input type="text" name="web" value="<?php echo isset($errores['web']) ? '' : $_POST['web']; ?>" />
         <p><span style="color:red">
-        <?php
-            echo isset($errores['web'])? $errores['web']:'';
-        ?>
-        </span></p>
+                <?php
+                echo isset($errores['web']) ? $errores['web'] : '';
+                ?>
+            </span></p>
         <br />
         <button type="submit" name="enviar">Enviar</button>
     </form>
@@ -98,7 +92,7 @@
             $errores["fechaNac"] = "El campo \"fechaNac\" es obligatorio";
         }
         $sep = "[\/\-\.]";
-        $patronFecha= "#^(((0?[1-9]|1\d|2[0-8]){$sep}(0?[1-9]|1[012])|(29|30){$sep}(0
+        $patronFecha = "#^(((0?[1-9]|1\d|2[0-8]){$sep}(0?[1-9]|1[012])|(29|30){$sep}(0
         ?[13456789]|1[012])|31{$sep}(0?[13578]|1[02])){$sep}(19|[2-9]\d)\d{2}|29{$sep}0?
         2{$sep}((19|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([2468][048]|[3579][26])00)))$#";
         if (preg_match($patronFecha, $_POST["fechaNac"]) == 0) {
