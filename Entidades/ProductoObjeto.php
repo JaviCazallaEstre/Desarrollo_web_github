@@ -23,4 +23,8 @@ class Producto
             return $this->$propiedad;
         }
     }
+    public function __toString()
+    {
+        return $this->codigo . " " . $this->nombre . " " . $this->precio;
+    }
 }
