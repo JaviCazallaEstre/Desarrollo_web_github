@@ -1,9 +1,9 @@
 <?php
 class Producto
 {
-    private $codigo;
-    private $nombre;
-    private $precio;
+    protected $codigo;
+    protected $nombre;
+    protected $precio;
 
     public function __construct($codigo, $nombre, $precio)
     {
@@ -17,11 +17,18 @@ class Producto
             $this->$propiedad = $valor;
         }
     }
-    public function __get($propiedad)
+
+    public function getCodigo()
     {
-        if (property_exists($this, $propiedad)) {
-            return $this->$propiedad;
-        }
+        return $this->codigo;
+    }
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+    public function getPrecio()
+    {
+        return $this->precio;
     }
     public function __toString()
     {

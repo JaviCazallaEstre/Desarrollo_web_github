@@ -1,0 +1,30 @@
+.Contenedor {
+  margin: 5%;
+  border: solid;
+  border-color: black;
+  background-color: white;
+}
+
+.listado {
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+.encabezado {
+  margin-top: -1%;
+  background-color: skyblue;
+  padding-bottom: 1px;
+}
+.pagardiv {
+  padding: 0.2%;
+  background-color: skyblue;
+  margin-bottom: 0%;
+}
+.pagar {
+  padding-left: 1%;
+  padding-top: 1%;
+}
+.encabezadoSuperior{
+  margin-top: -0.95%;
+  background-color: skyblue;
+  padding-bottom: 1px;
+}

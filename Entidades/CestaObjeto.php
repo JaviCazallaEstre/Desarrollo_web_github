@@ -1,33 +1,49 @@
 <?php
-include_once('ProductoObjeto.php');
+require_once('ProductoObjeto.php');
 class Cesta
 {
-    private $cesta = array();
+    protected $cesta = array();
 
-    public function nuevoArticulo(Producto $p)
+    public function nuevo_articulo($codigo)
     {
-        array_push($this->cesta, $p);
+        $producto = ProductosDB::obtieneProductoCodigo($codigo);
+        $this->cesta[] = $producto;
     }
-    public function __get($cesta)
+
+    public function get_productos()
     {
-        return $this->$cesta;
+        return $this->cesta;
     }
+
     public function limpiaCesta()
     {
         unset($this->cesta);
-        $this->cesta=array();
+        $this->cesta = array();
     }
-    public static function muestraCesta(array $cesta){
+    public static function muestraCesta(array $cesta)
+    {
         foreach ($cesta as $producto) {
-           echo($producto);
+            echo ($producto);
         }
     }
-    public static function costeCesta(array $cesta)
+    public  function costeCesta()
     {
         $suma = 0;
-        foreach ($cesta as $producto) {
-            $suma = $suma + $producto["precio"];
+        foreach ($this->cesta as $producto) {
+            $suma = $suma + $producto->getPrecio();
         }
         return $suma;
+    }
+    public function guarda_cesta()
+    {
+        $_SESSION['cesta'] = $this;
+    }
+    public static function carga_cesta()
+    {
+        if (!isset($_SESSION['cesta'])) {
+            return new Cesta();
+        } else {
+            return $_SESSION['cesta'];
+        }
     }
 }

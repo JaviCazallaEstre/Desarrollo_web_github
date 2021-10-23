@@ -1,0 +1,25 @@
+.contenedor {
+    margin: 5%;
+    border: solid;
+    border-color: black;
+    background-color: white;
+    
+  }
+  .titulo {
+    padding-left: 1%;
+    padding-top: 1%;
+  }
+  .encabezado {
+    margin-top: -1.2%;
+    background-color: skyblue;
+    padding-bottom: 1px;
+  }
+  .listado {
+    margin-left: 2%;
+    margin-bottom: 2%;
+  }
+  .pagar{
+    padding-left: 1%;
+    background-color: skyblue;
+    margin-bottom: -0.7%;
+  }
