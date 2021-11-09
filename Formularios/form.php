@@ -18,6 +18,19 @@
     </form>
     <?php
 
+
+
+
+$sentencia="INSERT INTO users VALUES($usuario->id,'$usuario->nombre','$usuario->correo',
+                                            '$usuario->contrasena','$usuario->roles')";
+
+
+
+
+
+
+
+
     if (isset($_POST["boton"])) {
         validaNombre($_POST["nombre"], $_POST["apellidos"]);
     }
