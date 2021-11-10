@@ -24,4 +24,16 @@ class BD
         $registros->bindParam(':Roles', $roles);
         $registros->execute();
     }
+    public static function existeUsuario($usuario, $contrasena)
+    {
+        $sentencia = "SELECT Nombre, Password FROM users WHERE Nombre LIKE '$usuario'";
+        $registros = self::$conexion->query($sentencia);
+        while ($resultado = $registros->fetch()) {
+            if ($resultado['Nombre'] == $usuario && $resultado['Password'] == $contrasena) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
