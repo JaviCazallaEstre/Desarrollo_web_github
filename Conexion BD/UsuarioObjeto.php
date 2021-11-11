@@ -6,14 +6,16 @@ class Usuario
     private $correo;
     private $contrasena;
     private $roles;
+    private $foto;
 
-    public function __construct($id, $nombre, $correo, $contrasena, $roles)
+    public function __construct($id, $nombre, $correo, $contrasena, $roles, $foto)
     {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->correo = $correo;
         $this->contrasena = $contrasena;
         $this->roles = $roles;
+        $this->foto = $foto;
     }
 
     public function __set($propiedad, $valor)

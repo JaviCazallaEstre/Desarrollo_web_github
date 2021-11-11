@@ -15,13 +15,15 @@ class BD
         $correo = $usuario->correo;
         $contrasena = $usuario->contrasena;
         $roles = $usuario->roles;
-        $sentencia = "INSERT INTO users VALUES(:ID, :Nombre, :Correo, :Password, :Roles)";
+        $foto = $usuario->foto;
+        $sentencia = "INSERT INTO users VALUES(:ID, :Nombre, :Correo, :Password, :Roles, :foto)";
         $registros = self::$conexion->prepare($sentencia);
         $registros->bindParam(':ID', $id);
         $registros->bindParam(':Nombre', $nombre);
         $registros->bindParam(':Correo', $correo);
         $registros->bindParam(':Password', $contrasena);
         $registros->bindParam(':Roles', $roles);
+        $registros->bindParam(':foto', $foto);
         $registros->execute();
     }
     public static function existeUsuario($usuario, $contrasena)
