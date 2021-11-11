@@ -42,6 +42,9 @@ if (isset($_POST["enviar"])) {
         <label for="roles">Roles</label>
         <input type="text" id="roles" name="roles" />
         <br />
+        <label for="foto">Foto:</label>
+        <input type="file" name="foto" id="foto" />
+        <br />
         <input type="submit" name="enviar" id="enviar" value="Enviar" />
     </form>
 </body>
