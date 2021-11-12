@@ -7,7 +7,6 @@ try {
     print("Error al crear conexion");
 }
 if (isset($_POST["enviar"])) {
-    var_dump($_FILES);
     $tamanoImagen = getimagesize($_FILES["foto"]["tmp_name"]);
     if ($tamanoImagen !== false) {
         $foto = $_FILES["foto"]["tmp_name"];
@@ -35,7 +34,7 @@ if (isset($_POST["enviar"])) {
 </head>
 
 <body>
-    <form method="post" name="formulario" id="formulario">
+    <form method="post" name="formulario" id="formulario" enctype="multipart/form-data">
         <table>
             <tr>
                 <td><label for="id">ID:</label></td>
