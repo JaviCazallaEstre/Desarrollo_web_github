@@ -5,6 +5,7 @@ bd::creaConexion();
 if (isset($_POST["enviar"])) {
     if ($_POST["usuario"] != "" && $_POST["contrasena"] != "") {
         if (bd::existeUsuario($_POST["usuario"], $_POST["contrasena"])) {
+            Session::inicia();
             Session::escribir("usuario", $_POST["usuario"]);
             Session::escribir("contrasena", $_POST["contrasena"]);
             if($_POST["recuerdame"]=='on'){
