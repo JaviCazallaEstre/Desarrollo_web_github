@@ -21,7 +21,7 @@
 
 
 
-$sentencia="INSERT INTO users VALUES($usuario->id,'$usuario->nombre','$usuario->correo',
+    $sentencia = "INSERT INTO users VALUES($usuario->id,'$usuario->nombre','$usuario->correo',
                                             '$usuario->contrasena','$usuario->roles')";
 
 
