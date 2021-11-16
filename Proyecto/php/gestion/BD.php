@@ -2,7 +2,7 @@
 class BD{
     private static $conexion;
     public static function creaConexion(){
-        self::$conexion = new PDO('mysql:host=localhost;dbname=examinadorS', 'root', '');
+        self::$conexion = new PDO('mysql:host=localhost;dbname=examinador', 'root', '');
     }
     public static function existeUsuario($email, $contrasena)
     {
