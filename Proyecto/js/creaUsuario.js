@@ -22,6 +22,28 @@ window.addEventListener("load", function () {
     );
     if (Object.keys(errores).length > 0) {
       muestraErrores(errores);
+    } else {
+      var texto = encodeURI(
+        "crear=&email=" +
+          email.value +
+          "&nombre=" +
+          nombre.value +
+          "&apellidos=" +
+          apellidos.value +
+          "&contrasena=" +
+          contrasena.value +
+          "&fecha=" +
+          fecha.value +
+          "&foto=" +
+          foto.src
+      );
+      const ajax = new XMLHttpRequest();
+      ajax.open("POST", "../php/formularios/creaUsuario.php");
+      ajax.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+      );
+      ajax.send(texto);
     }
   };
 
@@ -34,8 +56,33 @@ window.addEventListener("load", function () {
     const tdFecha = document.getElementById("tdFecha");
     const tdfoto = document.getElementById("tdfoto");
     if (errores.hasOwnProperty("email")) {
-      alert("hola");
+      escribeErrores("email", errores, tdEmail);
     }
+    if (errores.hasOwnProperty("nombre")) {
+      escribeErrores("nombre", errores, tdNombre);
+    }
+    if (errores.hasOwnProperty("apellidos")) {
+      escribeErrores("apellidos", errores, tdApellidos);
+    }
+    if (errores.hasOwnProperty("contrasena")) {
+      escribeErrores("contrasena", errores, tdContrasena);
+    }
+    if (errores.hasOwnProperty("contrasenaIgual")) {
+      escribeErrores("contrasenaIgual", errores, tdContrasenaIgual);
+    }
+    if (errores.hasOwnProperty("fecha")) {
+      escribeErrores("fecha", errores, tdFecha);
+    }
+    if (errores.hasOwnProperty("foto")) {
+      escribeErrores("foto", errores, tdfoto);
+    }
+  }
+
+  function escribeErrores(atributo, errores, elemento) {
+    parrafo = document.createElement("p");
+    parrafo.innerHTML = errores[atributo];
+    parrafo.setAttribute("class", "error");
+    elemento.appendChild(parrafo);
   }
 
   function validaUsuario(
