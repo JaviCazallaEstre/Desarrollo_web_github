@@ -1,8 +1,15 @@
 <?php
 if(isset($_POST["enviar"])){
     $errores=array();
-    if(isset($_POST[""]))
-    
+    if($_POST["enunciado"]==""){
+        $errores["enunciado"]="El enunciado debe de estar relleno";
+    }
+    if($_POST["opcion1"]==""){
+        $errores["opcion1"]=="la primera opcion debe de estar rellena";
+    }
+    if($_POST["opcion2"]==""){
+        
+    }
 }
 ?>
 <!DOCTYPE html>
