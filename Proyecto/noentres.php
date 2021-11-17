@@ -1,8 +1,9 @@
 <?php
+include_once("php/gestion/BD.php");
 BD::creaConexion();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -85,7 +86,7 @@ BD::creaConexion();
         }
         ?>
         <a href="">¿Has olvidado tu contraseña</a>
-        <a href="">Nueva cuente de usuario</a>
+        <a href="">Nueva cuenta de usuario</a>
     </div>
 </body>
 
