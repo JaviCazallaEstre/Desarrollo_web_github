@@ -28,7 +28,7 @@ $mail->MsgHTML($foto);
 // adjuntos
 //$mail->addAttachment("dogo-aleman.jpg");
 // destinatario
-$address = "jve@ieslasfuentezuelas.com";
+$address = "javi.cazalla@gmail.com";
 $mail->AddAddress($address, "Test");
 // enviar
 $resul = $mail->Send();
