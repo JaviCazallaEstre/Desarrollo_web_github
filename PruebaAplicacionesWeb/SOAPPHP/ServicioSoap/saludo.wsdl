@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/SOAPPHP/ServicioSoap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="HolaServicio" targetNamespace="http://localhost/SOAPPHP/ServicioSoap/">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/SOAPPHP/ServicioSoap/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="HolaServicioPort">
+    <operation name="adios">
+      <input message="tns:adiosIn"/>
+      <output message="tns:adiosOut"/>
+    </operation>
+    <operation name="saludo">
+      <input message="tns:saludoIn"/>
+      <output message="tns:saludoOut"/>
+    </operation>
+    <operation name="suma">
+      <input message="tns:sumaIn"/>
+      <output message="tns:sumaOut"/>
+    </operation>
+    <operation name="siguiente">
+      <input message="tns:siguienteIn"/>
+      <output message="tns:siguienteOut"/>
+    </operation>
+    <operation name="sacaUsuariosBD">
+      <input message="tns:sacaUsuariosBDIn"/>
+      <output message="tns:sacaUsuariosBDOut"/>
+    </operation>
+  </portType>
+  <binding name="HolaServicioBinding" type="tns:HolaServicioPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="adios">
+      <soap:operation soapAction="http://localhost/SOAPPHP/ServicioSoap/#adios"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </output>
+    </operation>
+    <operation name="saludo">
+      <soap:operation soapAction="http://localhost/SOAPPHP/ServicioSoap/#saludo"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </output>
+    </operation>
+    <operation name="suma">
+      <soap:operation soapAction="http://localhost/SOAPPHP/ServicioSoap/#suma"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </output>
+    </operation>
+    <operation name="siguiente">
+      <soap:operation soapAction="http://localhost/SOAPPHP/ServicioSoap/#siguiente"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </output>
+    </operation>
+    <operation name="sacaUsuariosBD">
+      <soap:operation soapAction="http://localhost/SOAPPHP/ServicioSoap/#sacaUsuariosBD"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/SOAPPHP/ServicioSoap/"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="adiosIn">
+    <part name="name" type="xsd:string"/>
+  </message>
+  <message name="adiosOut">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="saludoIn">
+    <part name="name" type="xsd:string"/>
+  </message>
+  <message name="saludoOut">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="sumaIn">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="sumaOut">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="siguienteIn">
+    <part name="a" type="xsd:int"/>
+  </message>
+  <message name="siguienteOut">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="sacaUsuariosBDIn"/>
+  <message name="sacaUsuariosBDOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <service name="HolaServicioService">
+    <port name="HolaServicioPort" binding="tns:HolaServicioBinding">
+      <soap:address location="http://localhost/SOAPPHP/ServicioSoap/"/>
+    </port>
+  </service>
+</definitions>

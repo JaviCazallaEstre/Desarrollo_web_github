@@ -1,0 +1,11 @@
+version: '3'
+services:
+  apache:
+    ports:
+    - 8080:8080
+  image: php:7.4-apache
+  sql:
+    ports:
+     - 3306:3306
+    image: mysql:latest
+network:
